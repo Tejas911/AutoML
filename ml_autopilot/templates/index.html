@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'autopilot/css/style.css' %}">
+  <!-- You can use a different version or host the file locally if needed -->
+  <title>ML on AutoPilot</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .flex-container main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body class="bg-light">
+    <div class="flex-container">
+   
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-navbar">
+            <div class="container-fluid">
+        <!-- Company Logo on the left -->
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'autopilot/images/ml_try.png' %}" alt="Company Logo" height="30" width="60">
+        </a>
+
+        <!-- Navbar Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Dataset Input Button (Moved to the left) -->
+            <button class="btn btn-light" data-toggle="modal" data-target="#datasetModal">Upload Dataset</button>
+
+            <!-- Navigation Links to the right -->
+            <div class="ml-auto">
+                <ul class="navbar-nav">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link navbar-link-active text-black" href="#">Home</a>
+                    </li>
+
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#about-us">About</a>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">Contact Us</a>
+                    </li>
+
+                    <!-- How to Use -->
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#how-to-use">How to Use</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<main class="container">
+    <!-- Your page content goes here -->
+         <!-- Carousel Section -->
+         <br>
+         <br>
+         <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="2000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'autopilot/images/1.jpg' %}" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'autopilot/images/2.jpg' %}" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'autopilot/images/3.jpg' %}" class="d-block w-100" alt="Image 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev" style="color: black;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next" style="color: black;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+        <br><br>
+       <!-- Upload Dataset Button and Try Now Text -->
+<div class="text-center">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#datasetModal">Upload Dataset</button>
+    <!-- <p class="mb-0 ml-2" style="font-size: 40px;">Try Now</p> -->
+</div>
+
+        <br><br>
+        <header >
+            <h1 id="about-us">About Us</h1>
+        <p>Welcome to ML on AutoPilot, your go-to platform for hassle-free machine learning model creation and deployment. Our mission is to empower users with the ability to effortlessly harness the potential of machine learning for their datasets to enhance decision making.</p>
+    </header>
+
+    <section class="section">
+      <br>  <h3>What We Do</h3>
+        <p>At ML on AutoPilot, we simplify the entire machine learning process. Whether you're a seasoned data scientist or a newcomer to the world of AI, our platform is designed to guide you through every step of the journey.</p>
+
+        <ol>
+            <li>
+                <strong>Dataset Analysis:</strong>br
+
+Upload your dataset, and we provide you with an in-depth Exploratory Data Analysis (EDA) report, offering valuable insights into your data.
+
+            </li><br>
+            <li>
+                <strong>Data Preprocessing:</strong>
+
+If your data needs cleaning, we guide you through the process, ensuring your dataset is in optimal condition for modeling
+
+            </li>
+          <br>  <li>
+                <strong>Handling Categorical Variables:</strong><br>
+
+We assist in managing categorical variables through methods like one-hot encoding or label encoding, enhancing the effectiveness of your model.
+                </ul>
+            </li>
+          <br>  <li>
+                <strong>Model Selection:</strong>
+
+Choose between our two modes: <strong>Manual</strong> and <strong>Automated</strong>.
+                    <ul>
+                        <li>Manual: Specify your preferences, including regression or classification, and input additional parameters like the value of k for k-NN.</li>
+                        <li>Automated:Let us handle the entire process, from algorithm selection to parameter tuning.</li>
+                    </ul>
+
+            </li>
+        </ol>
+    </section>
+
+    <section class="section">
+       <br> <h3>Your Toolkit</h3>
+        <p>Upon completion of the processing and training steps, we provide you with a personalized toolkit:</p>
+
+        <ul class="toolkit-items">
+            <li><strong>Pickle File:</strong> Download your trained model in a convenient pickle file format for seamless integration into your projects.</li>
+            <br><li><strong>JSON File:</strong> Access a JSON file containing information about the encoding methods applied during preprocessing.</li>
+            <br><li><strong>Handbook [Text File]:</strong> Obtain a detailed text file helping you in using the trained model and documentation of the algorithm used, ensuring transparency in your model's methodology.</li>
+            <br><li><strong>IPython Notebook (ipynb):</strong> For those who love to visualize, explore, and experiment, we provide an IPython notebook with Gradio interface, allowing you to interact with your model effortlessly.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+       <br> <h3>Get Started Today!</h3>
+        <p>Join ML on AutoPilot today and unlock the potential of your data. Whether you're a novice or an expert, our platform is tailored to make machine learning accessible to everyone. Start your journey towards accurate predictions and data-driven insights with ML on AutoPilot.</p>
+    </section>
+    <section >
+        <br>
+        <h1>How to Use</h1>
+        <div id="how-to-use" class="section" style="display: flex; justify-content: center; align-items: center;">
+            <!-- Video section for "How to Use" -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen style="margin: auto;"></iframe>
+    </div>
+
+    </section>
+<br>
+
+</main>
+
+<footer class="bg-primary text-light p-3 ">
+    <p class="mb-0">Copyright © 2024 NeuroMind Labs Inc.&nbsp;&nbsp;&nbsp;All rights reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href="mailto:labsneuromind.com" class="text-light">labsneuromind.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#about-us" class="text-light">FAQs</a></p>
+</footer>
+
+<!-- Dataset Modal -->
+<div class="modal" id="datasetModal" tabindex="-1" role="dialog" aria-labelledby="datasetModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="datasetModalLabel">Upload Dataset</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Your dataset input form goes here -->
+                <form>
+                    <div class="form-group">
+                        <label for="datasetInput">Choose a dataset file:</label>
+                        <input type="file" class="form-control-file" id="datasetInput">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JavaScript and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static 'autopilot/js/script.js' %}"></script>
+
+</div>
+
+</body>
+</html>

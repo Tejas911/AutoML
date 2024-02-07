@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="your_stylesheet.css">
+    <title>ML on AutoPilot</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            /* Your imaginary navbar styles */
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        .flex-container main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px; /* Adjust this value for the desired distance */
+        }
+
+        footer {
+            margin-top: auto; /* Push the footer to the bottom of the flex container */
+        }
+
+        .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px; /* Adjust this value for the desired distance */
+    }
+
+    .button-container button {
+        /* Adjust this value for spacing between buttons */
+        margin: 30px;
+    }
+
+        .button-container button {
+            margin-bottom: 10px; /* Adjust this value for spacing between buttons */
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="flex-container">
+        <header>
+            <!-- Your imaginary navbar content goes here -->
+            <nav>
+                <!-- Navbar content -->
+            </nav>
+        </header>
+
+        <!-- Image below the navbar with some distance -->
+        <main>
+            <img src="eda_img.png" alt="Centered Image" class="img-fluid mx-auto mb-4" style="max-width: 600px;">
+
+            <!-- Download button below the image -->
+            <a href="your_download_link" class="btn btn-primary mb-2">Download EDA Report</a>
+
+            <!-- Button container for Upload and Next buttons -->
+            <div class="button-container">
+                <!-- Upload Clean Dataset button -->
+                <button class="btn btn-success">Upload Clean Dataset</button>
+
+
+                <button class="btn btn-info">Next</button>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

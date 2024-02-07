@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+
+
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'autopilot/css/style.css' %}">
   <!-- You can use a different version or host the file locally if needed -->
@@ -42,7 +46,7 @@
         <!-- Navbar Items -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Dataset Input Button (Moved to the left) -->
-            <button class="btn btn-light" data-toggle="modal" data-target="#datasetModal">Upload Dataset</button>
+            {% comment %} <button class="btn btn-light" data-toggle="modal" data-target="#datasetModal">Upload Dataset</button> {% endcomment %}
 
             <!-- Navigation Links to the right -->
             <div class="ml-auto">
@@ -100,10 +104,17 @@
         
         <br><br>
        <!-- Upload Dataset Button and Try Now Text -->
-<div class="text-center">
+{% comment %} <div class="text-center">
     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#datasetModal">Upload Dataset</button>
     <!-- <p class="mb-0 ml-2" style="font-size: 40px;">Try Now</p> -->
-</div>
+</div> {% endcomment %}
+<h2>Upload CSV File</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Upload</button>
+    </form>
+
 
         <br><br>
         <header >
@@ -209,7 +220,17 @@ Choose between our two modes: <strong>Manual</strong> and <strong>Automated</str
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{% static 'autopilot/js/script.js' %}"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </div>
 
 </body>

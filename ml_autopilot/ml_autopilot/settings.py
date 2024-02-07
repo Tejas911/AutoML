@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "autopilot",
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # my changes here
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+UPLOADS_DIR = os.path.join(BASE_DIR, "uploads")
+
+# Configure Django's file storage
+MEDIA_ROOT = UPLOADS_DIR
+MEDIA_URL = "/uploads/"

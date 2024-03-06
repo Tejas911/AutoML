@@ -18,7 +18,7 @@ Clone the project
 
 
 ### Open Terminal:
-#### Requirements 
+#### Requirements:
 
 Install requirements 
 

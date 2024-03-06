@@ -23,7 +23,7 @@ Clone the project
 Install requirements 
 
 ```bash
-  pip install -r requirements.txt
+  pip install -r requirements.rtf
 ```
 ##### Launch App:
 Launch the streamlit app by running the follwoing command in your project folder:
